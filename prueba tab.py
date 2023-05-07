@@ -420,7 +420,7 @@ def update_output_div(tab, selected_Examen, selected_Age, selected_Sex, selected
         dff = pd.DataFrame(result)
         dff.columns = (["Edad", 'Diagnóstico', 'Cantidad'])
         dff['Diagnóstico'] = dff['Diagnóstico'].replace([0, 1, 2, 3, 4], ['Saludable', 'Etapa 1', 'Etapa 2', 'Etapa 3', 'Etapa 4'])
-        fig = px.scatter(dff, x="Edad", y="Diagnóstico", size="Cantidad")
+        fig = px.scatter(dff, x="Edad", y="Diagnóstico", size="Cantidad", color="Cantidad", color_continuous_scale="sunsetdark")
         
         #Query sexo
         
@@ -433,7 +433,7 @@ def update_output_div(tab, selected_Examen, selected_Age, selected_Sex, selected
         dff['Sexo'] = dff['Sexo'].replace([0, 1], ['Femenino', 'Masculino'])
         dff['Diagnóstico'] = dff['Diagnóstico'].replace([0, 1, 2, 3, 4], ['Saludable', 'Etapa 1', 'Etapa 2', 'Etapa 3', 'Etapa 4'])
         
-        fig2 = px.scatter(dff, x="Sexo", y="Diagnóstico", size="Cantidad")
+        fig2 = px.scatter(dff, x="Sexo", y="Diagnóstico", size="Cantidad", color="Cantidad", color_continuous_scale="sunsetdark")
         fig2.update_layout(width=800)
         
         #Query angina
@@ -447,7 +447,7 @@ def update_output_div(tab, selected_Examen, selected_Age, selected_Sex, selected
         dff['Angina inducida por el ejercicio'] = dff['Angina inducida por el ejercicio'].replace([0, 1], ['No tiene angina inducida', 'Sí tiene angina inducida'])
         dff['Diagnóstico'] = dff['Diagnóstico'].replace([0, 1, 2, 3, 4], ['Saludable', 'Etapa 1', 'Etapa 2', 'Etapa 3', 'Etapa 4'])
         
-        fig3 = px.scatter(dff, x="Angina inducida por el ejercicio", y="Diagnóstico", size="Cantidad")
+        fig3 = px.scatter(dff, x="Angina inducida por el ejercicio", y="Diagnóstico", size="Cantidad", color="Cantidad", color_continuous_scale="sunsetdark")
         fig3.update_layout(width=800)
         
         return dash.no_update, dash.no_update, fig, fig2, fig3, dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update
@@ -535,7 +535,7 @@ def update_output_div(tab, selected_Examen, selected_Age, selected_Sex, selected
         dff.columns = (["Resultado", 'Diagnóstico', 'Cantidad'])
         dff['Diagnóstico'] = dff['Diagnóstico'].replace([0, 1, 2, 3, 4], ['Saludable', 'Etapa 1', 'Etapa 2', 'Etapa 3', 'Etapa 4'])
         dff['Resultado'] = dff['Resultado'].replace([3, 6, 7], ['Normal', 'Defecto fijo', 'Defecto reversible'])
-        fig = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad")
+        fig = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad", color="Cantidad", color_continuous_scale="sunsetdark")
         
         #Query Dolor pecho
         
@@ -547,7 +547,7 @@ def update_output_div(tab, selected_Examen, selected_Age, selected_Sex, selected
         dff.columns = (["Resultado", 'Diagnóstico', 'Cantidad'])
         dff['Diagnóstico'] = dff['Diagnóstico'].replace([0, 1, 2, 3, 4], ['Saludable', 'Etapa 1', 'Etapa 2', 'Etapa 3', 'Etapa 4'])
         dff['Resultado'] = dff['Resultado'].replace([1, 2, 3, 4], ['Angina típica', 'Angina atípica', 'Dolor no-anginal', 'Asintomático'])
-        fig2 = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad")
+        fig2 = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad", color="Cantidad", color_continuous_scale="sunsetdark")
         
         #Query Electrocardiograma
         
@@ -559,7 +559,7 @@ def update_output_div(tab, selected_Examen, selected_Age, selected_Sex, selected
         dff.columns = (["Resultado", 'Diagnóstico', 'Cantidad'])
         dff['Diagnóstico'] = dff['Diagnóstico'].replace([0, 1, 2, 3, 4], ['Saludable', 'Etapa 1', 'Etapa 2', 'Etapa 3', 'Etapa 4'])
         dff['Resultado'] = dff['Resultado'].replace([0, 1, 2], ["Normal", 'Anormalidad de onda ST-T', 'Hipertropía ventricular izquierda probable o definitiva'])
-        fig3 = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad")
+        fig3 = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad", color="Cantidad", color_continuous_scale="sunsetdark")
         
         #Query Depresión ST
         
@@ -571,7 +571,7 @@ def update_output_div(tab, selected_Examen, selected_Age, selected_Sex, selected
         dff.columns = (["Resultado", 'Diagnóstico', 'Cantidad'])
         dff['Diagnóstico'] = dff['Diagnóstico'].replace([0, 1, 2, 3, 4], ['Saludable', 'Etapa 1', 'Etapa 2', 'Etapa 3', 'Etapa 4'])
         dff['Resultado'] = dff['Resultado'].replace(['baja', 'normal', 'terrible'], ["Baja", 'Normal', 'Terrible'])
-        fig4 = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad")
+        fig4 = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad", color="Cantidad", color_continuous_scale="sunsetdark")
         
         #Query Pendiente ST
         
@@ -583,7 +583,7 @@ def update_output_div(tab, selected_Examen, selected_Age, selected_Sex, selected
         dff.columns = (["Resultado", 'Diagnóstico', 'Cantidad'])
         dff['Diagnóstico'] = dff['Diagnóstico'].replace([0, 1, 2, 3, 4], ['Saludable', 'Etapa 1', 'Etapa 2', 'Etapa 3', 'Etapa 4'])
         dff['Resultado'] = dff['Resultado'].replace([1, 2, 3], ["Ascenso", 'Plano', 'Descenso'])
-        fig5 = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad")
+        fig5 = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad", color="Cantidad", color_continuous_scale="sunsetdark")
         
         #Query Vasos coloreados
         
@@ -594,7 +594,7 @@ def update_output_div(tab, selected_Examen, selected_Age, selected_Sex, selected
         dff = pd.DataFrame(result)
         dff.columns = (["Resultado", 'Diagnóstico', 'Cantidad'])
         dff['Diagnóstico'] = dff['Diagnóstico'].replace([0, 1, 2, 3, 4], ['Saludable', 'Etapa 1', 'Etapa 2', 'Etapa 3', 'Etapa 4'])
-        fig6 = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad")
+        fig6 = px.scatter(dff, x="Resultado", y="Diagnóstico", size="Cantidad", color="Cantidad", color_continuous_scale="sunsetdark")
         fig6.update_xaxes(dtick = 1)
         
         return dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update, fig, fig2, fig3, fig4, fig5, fig6
