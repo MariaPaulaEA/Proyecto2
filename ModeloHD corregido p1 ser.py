@@ -15,7 +15,7 @@ from pgmpy.models import BayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.readwrite import BIFWriter
 
-na_values = ["?"]
+na_values = ["?"] 
 
 df=pd.read_csv("/Users/paulaescobar/Documents/ACTD/Proyecto1/processed.cleveland.data.csv", sep = ",", na_values = na_values, header = None)
 df.columns
